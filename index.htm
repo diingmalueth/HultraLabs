@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hultralabs | Breaking the CPF Cycle</title>
+  <meta name="description" content="Hultralabs breaks the 'Cram. Pass. Forget.' cycle by making engineering knowledge stick — articles, tutorials and projects for students and innovators." />
   <link rel="stylesheet" href="style.css" />
+  
 </head>
 <body>
   <!-- Header -->
@@ -13,58 +15,74 @@
     <p>Where Learning Lasts, and Knowledge Becomes Power</p>
   </header>
 
-  <!-- Navigation -->
-  <nav class="sidebar" id="sidebar">
+  <!-- Navigation (sidebar on desktop, hidden on mobile) -->
+  <nav class="sidebar" id="sidebar" aria-label="Primary navigation">
     <a href="#">Home</a>
-    <a href="#">Articles</a>
-    <a href="#">Projects</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
+    <a href="#articles">Articles</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </nav>
 
   <!-- Hamburger Menu for Mobile -->
-  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
 
-  <!-- Hero Section -->
-  <section class="hero">
+  <!-- Hero Section (contains the full refined motivation) -->
+  <section class="hero" role="region" aria-labelledby="hero-heading">
     <div class="hero-content">
-      <h2>Breaking the Cycle: From Cram → Pass → Forget</h2>
-      <p>
-        In college, one slogan echoed louder than any other: 
-        <strong>Cram. Pass. Forget. (CPF).</strong>  
-        It was more than a saying — it was a trap. Students pushed through every semester, 
-        memorizing just enough to pass exams, only to forget everything once the new semester began.
-      </p>
-      <p>
-        By the final years — when we were expected to design real-world solutions — 
-        most of us could barely recall <strong>10% of what we had learned</strong>.  
-        The result? Good GPAs, but a fragile knowledge base. Mediocre projects. Missed opportunities.
-      </p>
-      <p>
-        I was no exception. But when I shared concepts with classmates, they suddenly became 
-        <em>simple, practical, and even exciting</em>. The problem wasn’t the material — 
-        it was how it was taught and connected to real life.
-      </p>
-      <p>
-        That’s why <strong>Hultralabs.com</strong> was born:  
-        to break the CPF cycle by making engineering knowledge stick, 
-        turning abstract ideas into tools for solving today’s challenges, 
-        and empowering students, innovators, and problem-solvers worldwide.
-      </p>
+      <h2 id="hero-heading">Breaking the Cycle: From Cram → Pass → Forget</h2>
+
+      <p><strong>In college, one slogan echoed louder than any other:</strong> <strong>Cram. Pass. Forget. (CPF).</strong></p>
+
+      <p>It was more than a saying — it was a trap. Students pushed through every semester, memorizing just enough to pass exams, only to forget everything once the new semester began.</p>
+
+      <p>By the time we reached our final years — when we were expected to design real-world solutions — most of us could barely recall <strong>10% of what we had learned</strong> in the first years. The result? Good GPAs, but a fragile knowledge base. Mediocre projects. Missed opportunities.</p>
+
+      <p>I was no exception. I asked myself: <em>Why do we fall into CPF?</em> The answer was clear: the concepts felt too abstract and disconnected from real applications. With exams looming, the only option was to cram, regurgitate, and move on.</p>
+
+      <p>But I discovered something important: when I explained those same concepts to classmates — connecting theory to simple examples and real problems — they suddenly became <em>simple, practical, and even exciting</em>. The problem wasn’t the material — it was how it was taught and related to real life.</p>
+
+      <p>That realization changed everything. If students everywhere were struggling with CPF, why not create a platform to break the cycle? A place where engineering concepts are explained clearly, tied to real problems, and made impossible to forget.</p>
+
+      <p><strong>That’s how <span style="color:#fff9c4">Hultralabs.com</span> was born — not just as a blog, but as a mission:</strong></p>
+
+      <ul>
+        <li>👉 <strong>To make engineering knowledge stick.</strong></li>
+        <li>👉 <strong>To turn abstract ideas into tools for solving today’s challenges.</strong></li>
+        <li>👉 <strong>To empower students, innovators, and problem-solvers worldwide.</strong></li>
+      </ul>
+
       <blockquote>
         <strong>Welcome to Hultralabs — where learning lasts, and knowledge becomes power.</strong>
       </blockquote>
+
+      <div class="buttons">
+        <a class="btn primary" href="#articles">Explore Articles</a>
+        <button id="shareBtn" class="btn outline" title="Share Hultralabs">Share Hultralabs</button>
+      </div>
     </div>
   </section>
 
   <!-- Main Content -->
   <main>
-    <h2>Featured Articles</h2>
-    <ul>
-      <li><a href="#">The Role of Signal Processing in Biomedical Devices</a></li>
-      <li><a href="#">Sustainable Engineering Solutions for Low-Resource Settings</a></li>
-      <li><a href="#">Introduction to Optical Sensors and Spectroscopy</a></li>
-    </ul>
+    <section id="articles">
+      <h2>Featured Articles</h2>
+      <ul>
+        <li><a href="#">The Role of Signal Processing in Biomedical Devices</a></li>
+        <li><a href="#">Sustainable Engineering Solutions for Low-Resource Settings</a></li>
+        <li><a href="#">Introduction to Optical Sensors and Spectroscopy</a></li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Latest Projects</h2>
+      <p>Showcase engineering projects, prototypes, and case studies here.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Hultralabs</h2>
+      <p>Hultralabs is a learning-first platform focused on making engineering concepts accessible and memorable.</p>
+    </section>
   </main>
 
   <!-- Footer -->
@@ -72,13 +90,36 @@
     <p>&copy; 2025 Hultralabs | Designed with ❤️ for learners</p>
   </footer>
 
-  <!-- JavaScript for Menu -->
+  <!-- JavaScript: menu toggle and share behaviour -->
   <script>
+    // Menu toggle
     const menuToggle = document.getElementById("menu-toggle");
     const sidebar = document.getElementById("sidebar");
-
-    menuToggle.addEventListener("click", () => {
+    menuToggle?.addEventListener("click", () => {
       sidebar.classList.toggle("active");
+    });
+
+    // Share button (uses Web Share API where available, fallback to copy link)
+    const shareBtn = document.getElementById("shareBtn");
+    shareBtn?.addEventListener("click", async () => {
+      const shareData = {
+        title: document.title,
+        text: "Check out Hultralabs — where engineering learning lasts.",
+        url: window.location.href
+      };
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else if (navigator.clipboard) {
+          await navigator.clipboard.writeText(window.location.href);
+          alert("Link copied to clipboard. Share it with your friends!");
+        } else {
+          // fallback: prompt with URL
+          prompt("Copy this link to share Hultralabs:", window.location.href);
+        }
+      } catch (err) {
+        console.warn("Share failed:", err);
+      }
     });
   </script>
 </body>

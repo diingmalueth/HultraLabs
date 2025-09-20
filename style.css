@@ -266,3 +266,40 @@ main {
     padding-left: 0.8rem;
   }
 }
+/* Buttons */
+.hero .buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s ease;
+}
+.btn.primary {
+  background: #facc15; /* golden yellow */
+  color: #08101a;
+}
+.btn.primary:hover {
+  background: #fde047;
+}
+.btn.outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.btn.outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 768px) {
+  .hero .buttons {
+    justify-content: center;
+  }
+}
