@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <pre >
+        <code class ="language-python"  style="font-size: 20px;">
+            fs = 1000  # Sampling frequency
+            t = np.arange(0, 1.0, 1.0/fs)  # Time vector
+            f1 = 5  # Frequency of the first sine wave
+            f2 = 50  # Frequency of the second sine wave
+            signal = np.sin(2 * np.pi * f1 * t) + 0.5 * np.sin(2 * np.pi * f2 * t)  # Composite signal
+            plt.figure(figsize=(10, 6))
+            plt.plot(t, signal) # Plot the signal
+            plt.title('Composite Signal')       
+            plt.xlabel('Time [s]')
+            plt.ylabel('Amplitude')
+            plt.grid()
+            plt.show()
+
+        </code>
+    </pre>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
